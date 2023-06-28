@@ -1,0 +1,780 @@
+{
+	"info": {
+		"_postman_id": "7ce53a23-6090-4d7f-ad60-41561335a849",
+		"name": "Vaccine-La",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Autenticação",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "ykurama",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "default"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"kkuwabara\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth?username=merlin&password=123456",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "merlin"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Usuário Logado",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Campaigns",
+			"item": [
+				{
+					"name": "All Campaigns",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/campaign/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campaign",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active Campaigns",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/campaign/active",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campaign",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inactive Campaigns",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/campaign/inactive",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campaign",
+								"inactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Campaign",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:8080/campaign/create?name=CAMPANHA DA GRIPE&status=4&startDate=2023-05-25&endDate=2023-06-25",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campaign",
+								"create"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "CAMPANHA DA GRIPE"
+								},
+								{
+									"key": "status",
+									"value": "4"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-05-25"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-06-25"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RequestDoses",
+			"item": [
+				{
+					"name": "All Dose Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/request/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dose Requests by CampaignId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic a2t1d2FiYXJhOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/campaign/2/doseRequests",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campaign",
+								"2",
+								"doseRequests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pendent Dose Requests by CampaignId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eWt1cmFtYToxMjM0NTY=",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/campaign/pendentDoseRequests?campaignId=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campaign",
+								"pendentDoseRequests"
+							],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Patient Name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8080/request/1/patient-name?patientName=Albert",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"1",
+								"patient-name"
+							],
+							"query": [
+								{
+									"key": "patientName",
+									"value": "Albert"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Dose Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/request/1/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"1",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TransferRequests",
+			"item": [
+				{
+					"name": "All Transfer Doses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/transfer/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transfer request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic eXVyYW1lc2hpOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8080/transfer/create?doseRequestId=1&receiverUsername=kkuwabara",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"create"
+							],
+							"query": [
+								{
+									"key": "doseRequestId",
+									"value": "1"
+								},
+								{
+									"key": "receiverUsername",
+									"value": "kkuwabara"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refuse Transfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic a2t1d2FiYXJhOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/transfer/1/reject",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"1",
+								"reject"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1/refuse",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Transfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic a2t1d2FiYXJhOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/transfer/1/cancel",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"1",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic a2t1d2FiYXJhOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/transfer/1/accept",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"transfer",
+								"1",
+								"accept"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"MErlin Silva\",\n  \"username\": \"merlin\",\n  \"email\": \"merlin@gmail.com\",\n  \"password\": \"123456\",\n  \"base\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/register?name=Merlin Sousa&username=merlinn&email=merlinn@gmail.com&password=123456&baseId=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Merlin Sousa"
+								},
+								{
+									"key": "username",
+									"value": "merlinn"
+								},
+								{
+									"key": "email",
+									"value": "merlinn@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "123456"
+								},
+								{
+									"key": "baseId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bWVybGluOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/user/edit/8?username=merlin&email=merlin@gmail.com&baseId=1&pictureId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"edit",
+								"8"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "merlin"
+								},
+								{
+									"key": "email",
+									"value": "merlin@gmail.com"
+								},
+								{
+									"key": "baseId",
+									"value": "1"
+								},
+								{
+									"key": "pictureId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bWVybGluOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/user/edit/password/4?password=123456",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"edit",
+								"password",
+								"4"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "123456"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Fotos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "basic bWVybGluOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/pictures/list/8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pictures",
+								"list",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bases",
+			"item": [
+				{
+					"name": "List Bases",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "basic bWVybGluOjEyMzQ1Ng==",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/base/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"base",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RequestVaccines",
+			"item": [
+				{
+					"name": "Vaccine Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic bWVybGluOjEyMzQ1Ng==",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/vaccine/1/request?amounts=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vaccine",
+								"1",
+								"request"
+							],
+							"query": [
+								{
+									"key": "amounts",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
